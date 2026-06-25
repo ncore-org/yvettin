@@ -1,0 +1,16 @@
+{
+  "projectName": "Yvettin",
+  "basePath": "/ncore-openclaw-backup/yvettin",
+  "dataPath": "/ncore-openclaw-backup/yvettin/data",
+  "logPath": "/ncore-openclaw-backup/yvettin/logs",
+  "excludePaths": [
+    "/ncore-openclaw-core",
+    "/home/ncore-system/.openclaw/workspace/projects/current-project"
+  ],
+  "contextIsolation": true,
+  "projectType": "independent",
+  "dependencies": [
+    ".opencode/package.json",
+    "yvettin.com/frontend/package.json"
+  ]
+}

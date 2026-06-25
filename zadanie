@@ -1,0 +1,526 @@
+Dobre a teraz si prejdes celu stranku ivetyncom prejdes si na nej kompletne vsetko čo je aj spravene a kompletne to spravis alp profesionalny hlbkovi plan v prvom kroku si prejdes systematicky za pomoci nejakych systemov a zistis co  vsetko je napojene na stranku a presne na aku čast je to napojene spravis komplet mapu zavislosti medzi jednotlivymi častami stranky a ich systemami a komponentami , prvkami a vsetkymi dalsimi vecami ktore su tam su, a spravis nic nevynechas ani nepreskocis musime mat kompletny obraz a summar v plane aby sme vedely co a kde je presne a ako to ako funguje je to jasne a pracujes na profesionalnej urovni v režime enterprise developer ktory nic nevynecha je to jasne 
+
+
+potom dalsia čast prejdes si si kompletne cely frontend vsetky komponenty dizajn a logiku a vsetko rozlozenie a co kde ako je presne dane prejde cely vyznam a logiku a strukturu celej frontend časti a zapises a uložis si do summar pre teba co kde a ako mame a zaroven to pridas do druhej polovice planu kde bude presne vsetko napisane a ukazane a bude to na proffesionalenej urovni vo enterprise kvalite je to jasne toto je len druha čast kde si to len prejdes co kde a ako mame aktualne a presne a z dorazom na vysvetelnie technicke a dizajnove a podobne je to jasne 
+
+a pootm pojdes na tretiu čast kde už budes mat za sebou prvu a druhu čast urobenu a zahrnutu vo svojom summar logike a aj v profesionalnom plane, no a v tejto tretej časti budes robit toto do posledneho detailu pixel to pixel prejdes vsteko na frontend a zistis co kde mame zle a co je potrebne orpavit ale hlavnou podstatou je to že navrhnes si profesionalen technicke stack plany ktore potom už v praci build tochto planu co navrhneme budes implementovat do eshopu ivetyncom takže prejdes si každy jeden komponent, prvok, ui a ux, vsetky library, strukturu, dizajn, logiku, usporiadane, a este ovela viac dalsieho je to jasne a pracujes profesionalne na urovni enterprise developer je to jasne 
+
+Takže teraz este nic realne nerobis  nemenis žiadne udaje len read only a kompletne spianie planu toto robis a bude to cele profesionalne a odborne a v každom bode to bude na enterprise uroven je to jasne nic nevynechas ani nepreskocis chapes tomu jasne, rozdelis si to na viac todos časti minimalne 20 lebo toto bude dlhy plan a nemame taky context token limit takže treba vzdy ked bude context token limit na hrane spravi save teda uložene planu aby to bolo vsetko spravne spravene je to jasne, A na ten plan to bude asi zrejme format .md tak spravis prenho nejaky nazov napriklad projektova-implementacia-pro-urovne.md takto napriklad ale ako maš lepsi nazov kludne daj ten je to jasne ale co maš robit 
+
+no a toto bude stvrta čast a tu spravis takto ako je opisana dole ale hlavne urobis o nej samostatnu čast v plane a zaroven aj svoje poznatky pre teba to budu, dole maš 6 stranok každu jednotlivo prejdes uplne detailne aby si mala kompletnu predstavu a aby to bolo presne a logicke a profesionalne pochopenie a spracovanie ake len može byt, a ked si jednotlivo budes prechadzat tie stranky tak to budes robit v najvisej kvalite a logicky a použijes niekolko pokrocilych systemov ktore jednotlivo a spravne budes použivat a budu to systemi ktore kvazi urobia obraz sken danych stranok a vysledok bude že vsetky ui/ux a logika z rozlozenim a strukturov co kde a ako presne je proste komplet logicke a technicky v stack to urobis pre každu stranku tu dole co je a spravne to das do planu kde to rozdelis na bodi a každa stranka bude mat svoj bod kde bude spravne a jednotlivo opisana a vsetko bude pri nej zaevidovane presne a profesionalne je to jasne , a popri tom budes riesit pre každu stranku osobytne to ako maju logiku a usporiadane komponentov a struktury stranok je to jasne a pracujes profesionalne v enterprise developerskom režime je to jasne a tu maš tie stranky dole a p nejake vysvetlenie ku nim 
+potom sa pozri tieto stranky z ktorych cerpaj logiku a strukturu ako co a kde maju a zaroven aj dizajn su to tieto:
+https://www.trendyol.com/sk 
+https://answear.sk/c/ona 
+https://www.kulturistika.com/sk 
+https://www.aboutyou.sk/ 
+https://modivo.sk/m/zeny.html 
+https://www.glami.sk/ 
+
+dole je pokracovanie
+
+
+
+dobre a teraz ti poslem toho viacej tak si sprav summar a ulož si to do gemini.md poslem ti prv zoznam zakladny nejake tam možu chybat tech stack ake mame su to tieto:
+
+📊 Backend (NestJS + Prisma + PostgreSQL + Redis + Docker)
+NestJS 14.x
+Prisma ORM
+PostgreSQL 16
+Redis 7 (caching)
+JWT authentication s refresh tokens
+GraphQL (Apollo Server) + REST endpoints
+Docker komponentizácia
+📊 Frontend (Next.js 14.2.5)
+Next.js 14 (App Router)
+React 18 (Client State Management)
+Zustand (State Management)
+Framer Motion (Animations)
+TanStack Query (Server State)
+Axios (HTTP Client)
+Shadcn/ui (UI Components)
+Tailwind CSS (Styling)
+TypeScript 5.x (Type Safety)
+
+
+a teaz sparvne si urbis strukturu v www, srv cestach pre backedn , frontend pracujeem vyhradne v profesionale enterprise kvalite takže radsje dlchsie ako skor a zle 
+
+a teraz ti poslôem srv strukturu ako ma byt v akom rozsahu chem to mat takto nejak tto co ti poslem je le nnacrt lebo systemi tam a nazvi nemusia mat nic spolocne z nasim projektom tu je srv - backend:
+
+ /srv/
+├─ applications/                    # Všetky aplikácie (nie len jedna)
+│  ├─ eshop-platform/              # Hlavná e-shop aplikácia
+│  │  ├─ api/                      # Backend API service
+│  │  │  ├─ current/               # Symlink na aktuálnu verziu
+│  │  │  ├─ releases/              # Verzované deploymenty
+│  │  │  │  ├─ 2026-01-20_v1.2.0/
+│  │  │  │  ├─ 2026-01-15_v1.1.5/
+│  │  │  │  └─ 2026-01-10_v1.1.0/
+│  │  │  ├─ shared/                # Zdieľané súbory medzi releases
+│  │  │  │  ├─ node_modules/       # Persistent npm packages
+│  │  │  │  ├─ config/             # Environment configs
+│  │  │  │  └─ uploads/            # User uploads
+│  │  │  └─ logs/                  # Application logs
+│  │  │     ├─ access/
+│  │  │     ├─ error/
+│  │  │     └─ debug/
+│  │  │
+│  │  ├─ web/                      # Frontend application
+│  │  │  ├─ current/               # Symlink na aktuálny build
+│  │  │  ├─ releases/
+│  │  │  │  ├─ 2026-01-20_build-342/
+│  │  │  │  └─ 2026-01-15_build-341/
+│  │  │  ├─ shared/
+│  │  │  │  ├─ public/             # Static assets
+│  │  │  │  └─ cache/              # Build cache
+│  │  │  └─ logs/
+│  │  │
+│  │  ├─ workers/                  # Background job processors
+│  │  │  ├─ feed-processor/
+│  │  │  │  ├─ current/
+│  │  │  │  ├─ releases/
+│  │  │  │  └─ logs/
+│  │  │  ├─ sync-engine/
+│  │  │  └─ email-sender/
+│  │  │
+│  │  └─ services/                 # Microservices (ak neskôr potrebuješ)
+│  │     ├─ image-optimizer/
+│  │     ├─ pdf-generator/
+│  │     └─ notification-service/
+│  │
+│  └─ monitoring/                  # Monitoring stack
+│     ├─ prometheus/
+│     ├─ grafana/
+│     └─ loki/
+│
+├─ data/                           # Všetky perzistentné dáta
+│  ├─ databases/                   # Database data files
+│  │  ├─ postgresql/
+│  │  │  ├─ clusters/              # Multiple PG clusters
+│  │  │  │  ├─ main-production/   # Cluster 1
+│  │  │  │  │  ├─ 16/             # PG version
+│  │  │  │  │  │  └─ data/
+│  │  │  │  │  ├─ config/
+│  │  │  │  │  │  ├─ postgresql.conf
+│  │  │  │  │  │  └─ pg_hba.conf
+│  │  │  │  │  └─ logs/
+│  │  │  │  │
+│  │  │  │  ├─ aggregation/        # Cluster 2
+│  │  │  │  │  └─ 16/
+│  │  │  │  │     └─ data/
+│  │  │  │  │
+│  │  │  │  └─ category-dbs/       # Cluster 3 (partitioned)
+│  │  │  │     ├─ category-01/
+│  │  │  │     ├─ category-02/
+│  │  │  │     └─ category-03/
+│  │  │  │
+│  │  │  └─ backups/               # DB backups
+│  │  │     ├─ daily/
+│  │  │     ├─ weekly/
+│  │  │     └─ monthly/
+│  │  │
+│  │  ├─ redis/
+│  │  │  ├─ instances/
+│  │  │  │  ├─ cache/              # Redis instance 1
+│  │  │  │  │  ├─ data/
+│  │  │  │  │  └─ config/
+│  │  │  │  ├─ queue/              # Redis instance 2
+│  │  │  │  └─ session/            # Redis instance 3
+│  │  │  └─ backups/
+│  │  │
+│  │  └─ search/                   # Search engines
+│  │     ├─ meilisearch/
+│  │     │  ├─ data/
+│  │     │  └─ dumps/
+│  │     └─ typesense/
+│  │
+│  ├─ storage/                     # Application storage
+│  │  ├─ uploads/                  # User uploaded files
+│  │  │  ├─ products/
+│  │  │  │  ├─ images/
+│  │  │  │  │  ├─ original/
+│  │  │  │  │  ├─ optimized/
+│  │  │  │  │  └─ thumbnails/
+│  │  │  │  └─ documents/
+│  │  │  └─ user-content/
+│  │  │
+│  │  ├─ feeds/                    # FEED system storage
+│  │  │  ├─ imports/
+│  │  │  │  ├─ supplier-001/
+│  │  │  │  │  ├─ incoming/        # Raw files
+│  │  │  │  │  ├─ processing/      # Being processed
+│  │  │  │  │  ├─ processed/       # Successfully processed
+│  │  │  │  │  ├─ failed/          # Failed imports
+│  │  │  │  │  └─ archive/         # Historical archive
+│  │  │  │  ├─ supplier-002/
+│  │  │  │  └─ supplier-003/
+│  │  │  │
+│  │  │  ├─ exports/               # Exports pre partnerov
+│  │  │  │  ├─ google-merchant/
+│  │  │  │  ├─ heureka/
+│  │  │  │  └─ pricemania/
+│  │  │  │
+│  │  │  └─ transformations/       # XSLT/mapping files
+│  │  │     ├─ schemas/
+│  │  │     └─ mappings/
+│  │  │
+│  │  ├─ cache/                    # File-based cache
+│  │  │  ├─ http/
+│  │  │  ├─ images/
+│  │  │  └─ compiled/
+│  │  │
+│  │  └─ temporary/                # Temp files (auto-cleanup)
+│  │     ├─ uploads/
+│  │     └─ processing/
+│  │
+│  └─ metrics/                     # Time-series data
+│     ├─ prometheus/
+│     │  └─ data/
+│     └─ timescaledb/
+│        └─ data/
+│
+├─ configuration/                  # Centralizovaná konfigurácia
+│  ├─ applications/
+│  │  ├─ eshop-platform/
+│  │  │  ├─ environments/
+│  │  │  │  ├─ production.env
+│  │  │  │  ├─ staging.env
+│  │  │  │  └─ development.env
+│  │  │  ├─ secrets/              # Encrypted secrets
+│  │  │  │  ├─ api-keys.enc
+│  │  │  │  ├─ certificates/
+│  │  │  │  └─ ssh-keys/
+│  │  │  └─ infrastructure/
+│  │  │     ├─ docker-compose.yml
+│  │  │     ├─ kubernetes/
+│  │  │     └─ nginx/
+│  │  │        ├─ sites-available/
+│  │  │        ├─ sites-enabled/
+│  │  │        └─ ssl/
+│  │  │
+│  │  └─ monitoring/
+│  │     ├─ prometheus.yml
+│  │     ├─ alertmanager.yml
+│  │     └─ grafana/
+│  │        └─ dashboards/
+│  │
+│  ├─ system/                      # System-level configs
+│  │  ├─ systemd/
+│  │  │  ├─ eshop-api.service
+│  │  │  ├─ eshop-worker.service
+│  │  │  └─ feed-processor.service
+│  │  ├─ cron/
+│  │  │  ├─ backup.cron
+│  │  │  └─ cleanup.cron
+│  │  └─ logrotate/
+│  │     └─ eshop.conf
+│  │
+│  └─ network/                     # Network configs
+│     ├─ firewall/
+│     ├─ vpn/
+│     └─ dns/
+│
+├─ scripts/                        # Automation scripts
+│  ├─ deployment/
+│  │  ├─ deploy-api.sh
+│  │  ├─ deploy-frontend.sh
+│  │  ├─ rollback.sh
+│  │  └─ health-check.sh
+│  │
+│  ├─ maintenance/
+│  │  ├─ backup/
+│  │  │  ├─ backup-databases.sh
+│  │  │  ├─ backup-files.sh
+│  │  │  └─ restore.sh
+│  │  ├─ cleanup/
+│  │  │  ├─ clean-logs.sh
+│  │  │  ├─ clean-temp.sh
+│  │  │  └─ optimize-db.sh
+│  │  └─ monitoring/
+│  │     ├─ check-disk-space.sh
+│  │     ├─ check-services.sh
+│  │     └─ alert.sh
+│  │
+│  └─ utilities/
+│     ├─ feed-import-manual.sh
+│     ├─ db-migration.sh
+│     └─ cache-warm.sh
+│
+├─ logs/                           # Centralizované logy
+│  ├─ applications/
+│  │  ├─ eshop-api/
+│  │  │  ├─ 2026-01/
+│  │  │  │  ├─ access.log
+│  │  │  │  ├─ error.log
+│  │  │  │  └─ debug.log
+│  │  │  └─ archived/
+│  │  ├─ eshop-workers/
+│  │  └─ nginx/
+│  │
+│  ├─ system/
+│  │  ├─ cron.log
+│  │  ├─ systemd/
+│  │  └─ kernel/
+│  │
+│  └─ security/
+│     ├─ auth.log
+│     ├─ firewall.log
+│     └─ intrusion-detection/
+│
+├─ backups/                        # Centralizované zálohy
+│  ├─ databases/
+│  │  ├─ incremental/
+│  │  │  └─ 2026-01-20/
+│  │  └─ full/
+│  │     └─ weekly/
+│  │
+│  ├─ files/
+│  │  ├─ daily/
+│  │  └─ weekly/
+│  │
+│  ├─ configurations/
+│  │  └─ monthly/
+│  │
+│  └─ metadata/                    # Backup metadata
+│     ├─ checksums/
+│     └─ manifests/
+│
+└─ runtime/                        # Runtime data (PID, sockets)
+   ├─ pids/
+   │  ├─ eshop-api.pid
+   │  └─ workers.pid
+   │
+   ├─ sockets/
+   │  ├─ postgresql/
+   │  └─ redis/
+   │
+   └─ locks/
+      └─ maintenance.lock
+
+## 🎯 **KĽÚČOVÉ PRINCÍPY TEJTO ŠTRUKTÚRY**
+
+### **1. Separation of Concerns**
+```
+applications/  → Kód a binárky
+data/          → Perzistentné dáta
+configuration/ → Všetky konfigurácie
+scripts/       → Automatizácia
+logs/          → Centrálne logy
+backups/       → Zálohy
+runtime/       → Dočasné runtime súbory
+```
+### **2. Versioning & Rollback Support**
+```
+applications/eshop-platform/api/
+├─ current → releases/2026-01-20_v1.2.0/  # Symlink
+├─ releases/
+│  ├─ 2026-01-20_v1.2.0/  ← Aktuálna verzia
+│  ├─ 2026-01-15_v1.1.5/  ← Predchádzajúca (rollback ready)
+│  └─ 2026-01-10_v1.1.0/  ← Historická
+└─ shared/  # Persistent data across releases
+
+toto je pre srv zakladny opis a nacrt toho ako ma byt modulrane siroka a oddelena 
+
+
+A teraz ti poslem fontend ako ma vyzerat aku ma mat www strukturu taka pozri to a ulož si to do pamete gemini.md a do summar tu je strukra www frontend:
+
+/var/www/
+├─ applications/                    # Všetky web aplikácie
+│  ├─ eshop-platform/              # Hlavná e-shop aplikácia
+│  │  ├─ frontend/                 # Next.js aplikácia
+│  │  │  ├─ current/               # Symlink → aktuálny build
+│  │  │  │
+│  │  │  ├─ releases/              # Verzované buildy
+│  │  │  │  ├─ 2026-01-20_build-342/
+│  │  │  │  │  ├─ .next/          # Next.js build output
+│  │  │  │  │  ├─ public/         # Static assets
+│  │  │  │  │  ├─ node_modules/   # Production dependencies
+│  │  │  │  │  ├─ package.json
+│  │  │  │  │  └─ next.config.js
+│  │  │  │  ├─ 2026-01-15_build-341/
+│  │  │  │  └─ 2026-01-10_build-340/
+│  │  │  │
+│  │  │  ├─ shared/                # Zdieľané medzi releases
+│  │  │  │  ├─ static/            # Persistent static files
+│  │  │  │  │  ├─ images/
+│  │  │  │  │  │  ├─ logo/
+│  │  │  │  │  │  ├─ icons/
+│  │  │  │  │  │  └─ banners/
+│  │  │  │  │  ├─ fonts/
+│  │  │  │  │  └─ downloads/
+│  │  │  │  ├─ uploads/           # User-uploaded content
+│  │  │  │  │  └─ product-images/ → symlink to /srv/data/storage/uploads/products/
+│  │  │  │  ├─ cache/             # Build cache
+│  │  │  │  │  ├─ next-cache/
+│  │  │  │  │  └─ image-cache/
+│  │  │  │  └─ config/            # Runtime configs
+│  │  │  │     ├─ .env.production
+│  │  │  │     ├─ .env.staging
+│  │  │  │     └─ robots.txt
+│  │  │  │
+│  │  │  ├─ artifacts/             # Build artifacts & metadata
+│  │  │  │  ├─ build-manifests/
+│  │  │  │  │  ├─ build-342.json
+│  │  │  │  │  └─ build-341.json
+│  │  │  │  ├─ source-maps/       # Production source maps
+│  │  │  │  │  ├─ build-342/
+│  │  │  │  │  └─ build-341/
+│  │  │  │  └─ bundle-analysis/   # Webpack bundle analyzer výstupy
+│  │  │  │     └─ build-342/
+│  │  │  │
+│  │  │  └─ logs/                  # Frontend-specific logs
+│  │  │     ├─ access/            # Nginx access logs
+│  │  │     ├─ error/             # Nginx error logs
+│  │  │     └─ application/       # Next.js logs (ak server-side)
+│  │  │
+│  │  ├─ admin-panel/              # Admin rozhranie (samostatná app)
+│  │  │  ├─ current/
+│  │  │  ├─ releases/
+│  │  │  ├─ shared/
+│  │  │  └─ logs/
+│  │  │
+│  │  └─ landing-pages/            # Marketing landing pages
+│  │     ├─ campaigns/
+│  │     │  ├─ 2026-q1-sale/
+│  │     │  └─ 2026-q2-new-products/
+│  │     └─ seasonal/
+│  │
+│  └─ static-sites/                # Statické weby
+│     ├─ blog/
+│     ├─ docs/
+│     └─ help-center/
+│
+├─ cdn/                            # CDN-ready static content
+│  ├─ assets/                      # Optimalizované assety
+│  │  ├─ images/
+│  │  │  ├─ optimized/            # WebP, AVIF formáty
+│  │  │  │  ├─ products/
+│  │  │  │  └─ categories/
+│  │  │  └─ thumbnails/           # Rôzne veľkosti
+│  │  │     ├─ 100x100/
+│  │  │     ├─ 300x300/
+│  │  │     └─ 600x600/
+│  │  ├─ scripts/                 # Minified JS
+│  │  │  ├─ vendor/               # Third-party libs
+│  │  │  └─ app/                  # Application JS
+│  │  ├─ styles/                  # Minified CSS
+│  │  └─ fonts/                   # Web fonts
+│  │     ├─ woff2/
+│  │     └─ woff/
+│  │
+│  └─ versioned/                   # Hashované súbory pre cache busting
+│     ├─ main-a1b2c3d4.js
+│     ├─ styles-e5f6g7h8.css
+│     └─ vendor-i9j0k1l2.js
+│
+├─ domains/                        # Multi-domain setup
+│  ├─ exprestaxi.sk/
+│  │  ├─ current → /var/www/applications/eshop-platform/frontend/current
+│  │  └─ www → current/           # www redirect
+│  │
+│  ├─ admin.exprestaxi.sk/
+│  │  └─ current → /var/www/applications/eshop-platform/admin-panel/current
+│  │
+│  └─ cdn.exprestaxi.sk/
+│     └─ current → /var/www/cdn/
+│
+├─ maintenance/                    # Maintenance mode pages
+│  ├─ default/
+│  │  ├─ index.html
+│  │  ├─ styles.css
+│  │  └─ logo.svg
+│  ├─ scheduled/                  # Pre plánované údržby
+│  └─ emergency/                  # Pre emergency downtime
+│
+├─ ssl/                           # SSL certifikáty a keys
+│  ├─ certificates/
+│  │  ├─ exprestaxi.sk/
+│  │  │  ├─ fullchain.pem
+│  │  │  ├─ privkey.pem
+│  │  │  └─ chain.pem
+│  │  └─ cdn.exprestaxi.sk/
+│  │
+│  ├─ acme-challenges/            # Let's Encrypt validation
+│  │  └─ .well-known/
+│  │
+│  └─ archive/                    # Expired certificates
+│     └─ 2025/
+│
+├─ cache/                         # Web cache storage
+│  ├─ nginx/                      # Nginx FastCGI cache
+│  │  ├─ temp/
+│  │  └─ cache/
+│  │
+│  ├─ varnish/                    # Varnish cache (ak používaš)
+│  │  └─ storage/
+│  │
+│  └─ redis-web/                  # Redis pre web cache
+│     └─ dumps/
+│
+├─ logs/                          # Centralizované web logs
+│  ├─ access/                     # Access logs per domain
+│  │  ├─ exprestaxi.sk/
+│  │  │  ├─ 2026-01/
+│  │  │  │  ├─ access-20260120.log
+│  │  │  │  └─ access-20260119.log
+│  │  │  └─ archived/
+│  │  │     └─ 2025-12.tar.gz
+│  │  └─ cdn.exprestaxi.sk/
+│  │
+│  ├─ error/                      # Error logs
+│  │  ├─ exprestaxi.sk/
+│  │  │  ├─ 2026-01/
+│  │  │  │  └─ error-20260120.log
+│  │  │  └─ archived/
+│  │  └─ cdn.exprestaxi.sk/
+│  │
+│  ├─ security/                   # Security-related logs
+│  │  ├─ blocked-ips.log
+│  │  ├─ suspicious-requests.log
+│  │  └─ rate-limit-violations.log
+│  │
+│  └─ analytics/                  # Raw analytics data
+│     ├─ goaccess/                # GoAccess výstupy
+│     └─ matomo/                  # Self-hosted analytics
+│
+├─ monitoring/                    # Frontend monitoring
+│  ├─ health-checks/
+│  │  ├─ uptime-status.json
+│  │  └─ endpoints.json
+│  │
+│  ├─ performance/
+│  │  ├─ lighthouse-reports/
+│  │  │  ├─ 2026-01-20/
+│  │  │  └─ 2026-01-15/
+│  │  └─ web-vitals/
+│  │     └─ metrics.json
+│  │
+│  └─ real-user-monitoring/       # RUM data
+│     └─ beacons/
+│
+├─ backups/                       # Frontend backups
+│  ├─ builds/                     # Build snapshots
+│  │  ├─ weekly/
+│  │  └─ monthly/
+│  │
+│  ├─ static-content/             # Static content backups
+│  │  └─ daily/
+│  │
+│  └─ configurations/             # Config backups
+│     └─ nginx/
+│
+└─ tmp/                           # Temporary files
+   ├─ uploads/                    # Temporary upload storage
+   ├─ processing/                 # Image processing temp
+   └─ sessions/                   # Session files (ak file-based)
+
+takto nejak budeme mat fronted rozlozerni a viem že tie subory tam su nepresne to je len demo nacrt takže okrem hl logiky neris nazvy suborov takže takto nejak bude vyzerat www frontend na takyto princip a
+
+A teraz spravis nasledonve priorita na teraz je spustenei frontend na to aby sa to mohlo pozriet toto sprav ale počas toho normalne pripravuj backend len ho nezapinaj ako server este samotny server takže normalne vsetko vytvoris nastavis umirestnis ale este nie na maximum 
+
+tu maš stranky z ktoryhc sa možes inspirovat dizajnom frontednd:
+https://www.trendyol.com/sk 
+https://answear.sk/c/ona 
+https://www.kulturistika.com/sk 
+https://www.aboutyou.sk/ 
+https://modivo.sk/m/zeny.html 
+https://www.glami.sk/ 

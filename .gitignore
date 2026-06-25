@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.tar.gz
+*.tgz
+
+# Backup files
+backup/
+
+# Large media files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+www.aboutyou.sk_.png
+Screenshot_*.png
+Untitled_Artwork.jpg
+
+# Zip files
+*.zip

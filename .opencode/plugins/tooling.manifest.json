@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "sdk": {
+    "runtime": [
+      "@opencode-ai/sdk",
+      "@opencode-ai/plugin",
+      "@modelcontextprotocol/sdk",
+      "@tarquinen/opencode-dcp",
+      "@plannotator/opencode",
+      "opencode-knowledge"
+    ],
+    "validation": ["zod"],
+    "observability": ["@sentry/node"]
+  },
+  "lspServers": [
+    {
+      "id": "typescript",
+      "command": "npm run lsp:ts",
+      "languageIds": ["typescript", "typescriptreact", "javascript", "javascriptreact"]
+    },
+    {
+      "id": "tailwind",
+      "command": "npm run lsp:tailwind",
+      "languageIds": ["css", "scss", "typescriptreact", "javascriptreact"]
+    },
+    {
+      "id": "html",
+      "command": "npm run lsp:html",
+      "languageIds": ["html"]
+    },
+    {
+      "id": "css",
+      "command": "npm run lsp:css",
+      "languageIds": ["css", "scss", "less"]
+    },
+    {
+      "id": "json",
+      "command": "npm run lsp:json",
+      "languageIds": ["json", "jsonc"]
+    },
+    {
+      "id": "yaml",
+      "command": "npm run lsp:yaml",
+      "languageIds": ["yaml"]
+    },
+    {
+      "id": "bash",
+      "command": "npm run lsp:bash",
+      "languageIds": ["shellscript"]
+    }
+  ]
+}
